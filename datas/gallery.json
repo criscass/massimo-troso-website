@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Artworks",
+    "images": [
+      {
+        "src": "/photos/car-1.jpg",
+        "alt": "car 1"
+      },
+      {
+        "src": "/photos/car-2.jpg",
+        "alt": "car 2"
+      },
+      {
+        "src": "/photos/car-3.jpg",
+        "alt": "car 3"
+      },
+      {
+        "src": "/photos/car-4.jpg",
+        "alt": "car 4"
+      },
+      {
+        "src": "/photos/car-5.jpg",
+        "alt": "car 5"
+      },
+      {
+        "src": "/photos/car-6.jpg",
+        "alt": "car 6"
+      },
+      {
+        "src": "/photos/car-7.jpg",
+        "alt": "car 7"
+      },
+      {
+        "src": "/photos/car-8.jpg",
+        "alt": "car 8"
+      },
+      {
+        "src": "/photos/car-9.jpg",
+        "alt": "car 9"
+      },
+      {
+        "src": "/photos/car-10.jpg",
+        "alt": "car 10"
+      },
+      {
+        "src": "/photos/car-11.jpg",
+        "alt": "car 11"
+      },
+      {
+        "src": "/photos/car-12.jpg",
+        "alt": "car 12"
+      },
+      {
+        "src": "/photos/car-13.jpg",
+        "alt": "car 13"
+      },
+      {
+        "src": "/photos/dog-1.jpg",
+        "alt": "Dog"
+      },
+      {
+        "src": "/photos/horse-1-small.jpg",
+        "alt": "Horse"
+      }
+    ]
+  }
+]

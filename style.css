@@ -1,0 +1,419 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ----- My CSS---- */
+
+:root {
+  --dark-color: #24292e;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+/* ----------------------------------------------------- */
+/* -------------- Header Fixed Navigation --------------*/
+/* ----------------------------------------------------- */
+
+.head-wrapper {
+  --nav-text-color: #24292e;
+  --nav-bg-color: transparent;
+  --margin: 1.2rem;
+  --burger-color: #24292e;
+  --burger-menu-bg-color: white;
+  --top-margin-burger-menu: 55px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--nav-bg-color);
+  transition: background-color ease-in-out 500ms;
+}
+
+.scrolled {
+  --nav-text-color: rgb(212, 212, 212);
+  --nav-bg-color: #24292e;
+  --margin: 0.6rem;
+  --burger-color: rgb(212, 212, 212);
+  --burger-menu-bg-color: #24292e;
+  --top-margin-burger-menu: 40px;
+}
+
+p {
+  text-indent: 20px;
+  font-family: "Roboto Slab", serif;
+}
+
+picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: solid 1px #24292e;
+}
+
+header nav {
+  margin-right: 1rem;
+}
+
+header a {
+  text-decoration: none;
+  font-family: "cinzel", serif;
+  font-size: 1.44rem;
+  font-weight: 400;
+  color: var(--nav-text-color);
+  transition: color ease-in-out 500ms;
+}
+
+.title {
+  font-family: "cinzel", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: var(--margin) 2rem;
+  color: var(--nav-text-color);
+  transition: all ease-in-out 500ms;
+}
+
+.burger-menu {
+  width: 30px;
+  height: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 2px;
+  background-color: var(--burger-color);
+  transition: 500ms;
+  transform-origin: center;
+}
+
+.active span {
+  position: absolute;
+
+  left: 0;
+  width: 100%;
+}
+
+.active span:nth-child(1) {
+  top: 40%;
+  transform: rotate(45deg);
+}
+.active span:nth-child(2) {
+  bottom: 40%;
+  transform: rotate(-45deg);
+}
+
+.burger-menu:focus {
+  outline: none;
+}
+.nav-links {
+  /* pointer-events: none; */
+  background-color: var(--burger-menu-bg-color);
+  position: fixed;
+  height: 300px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  right: -100%;
+  width: 40%;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  top: var(--top-margin-burger-menu);
+  opacity: 0;
+  transition: 500ms ease-in-out;
+}
+
+.nav-links a {
+  font-size: 1.2rem;
+}
+
+.nav-links-active {
+  right: 0;
+  opacity: 1;
+}
+
+header a {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+/* Invisible space above hero pic for intersectionObserver */
+.spacer {
+  height: 3rem;
+  pointer-events: none;
+}
+
+/* Invisible space above sections to center page after link is clicked */
+
+.spacer2 {
+  height: 1rem;
+}
+
+/*  End of Navigation */
+
+.chapter {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0 1rem 0;
+}
+
+.chapter h2 {
+  display: inline;
+  font-family: "cinzel", serif;
+  font-weight: 400;
+  font-size: 1.45rem;
+  text-align: center;
+
+  border-top: solid 1px var(--dark-color);
+}
+
+.more-artworks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artwork-piece {
+  margin-bottom: 3rem;
+}
+
+.artwork-piece p {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.more-artworks h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-right: 1rem;
+}
+
+.more-artworks svg {
+  fill: var(--dark-color);
+}
+
+.about p {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacts p {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-indent: 0;
+  text-align: center;
+}
+
+.socials {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.socials svg {
+  width: 20px;
+  margin: 0 0.5rem;
+  stroke: var(--dark-color);
+}
+
+/*breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); */
+
+@media screen and (min-width: 576px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  .artworks p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .chapter h2 {
+    font-size: 2rem;
+  }
+  .nav-links {
+    /* pointer-events: none; */
+    position: static;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    top: var(--top-margin-burger-menu);
+    opacity: 1;
+    transition: 500ms ease-in-out;
+    height: auto;
+  }
+  .burger-menu {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  .nav-links-active {
+    right: 0;
+    opacity: 1;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 1.45rem;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: solid 1px #24292e;
+  }
+  header li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+
+  header a {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .artwork-piece {
+    margin-bottom: 5rem;
+  }
+
+  .grid-3 {
+    margin: 0 2rem;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    gap: 2rem;
+  }
+
+  .grid-2 {
+    margin: 0 2rem;
+    display: grid;
+    grid-template-columns: 8fr 8fr;
+    gap: 2rem;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about p {
+    font-size: 1.44rem;
+    padding: 1rem 5rem;
+  }
+
+  .about img {
+    max-width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .contacts p {
+    font-size: 1rem;
+    margin: 0 5rem;
+  }
+
+  .socials {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  header a {
+    font-size: 1.2rem;
+  }
+}
+
+.more-content {
+  display: none;
+  transition: all 0.5s;
+}
