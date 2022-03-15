@@ -5,14 +5,14 @@ createModal();
 //Global query Selectors
 const modalableImages = document.querySelectorAll('[data-modal="true"]');
 const modalContainer = document.querySelector(".modal-container");
-const modalTrack = document.querySelector("modal__img-container");
+const modalTrack = document.querySelector(".modal__img-container");
 
 // all galleries shared
 let transitionSpeed;
 let galleries;
 
 // for each gallery
-let modaImages;
+let modalImages;
 let modalIndicators;
 let currentIndex;
 let lastIndex;
@@ -48,18 +48,17 @@ class Modal {
 
 const modal = new Modal(modalContainer);
 
-console.log(galleryImages);
-
 function updateGallery(galleryImages) {
   currentIndex = 1;
   lastIndex = galleryImages.length;
 }
+
 //event listeners
 function attachOpenGalleryEvenListeners() {
   modalableImages.forEach((btn) => {
     btn.addEventListener("click", () => {
       // updateGallery(gallery);
-      console.log(btn.dataset);
+      console.log(btn);
       modal.openModal();
     });
   });
@@ -84,9 +83,10 @@ export default async function initGallery(endpoint, options) {
       return response.json();
     })
     .then((data) => {
-      const galleries = data;
+      galleries = data;
+      console.log(galleries);
 
-      const transitionSpeed = options?.speed || 250;
+      transitionSpeed = options?.speed || 250;
       attachOpenGalleryEvenListeners();
     })
     .catch((error) => {
