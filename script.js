@@ -12,6 +12,65 @@ const contacts = document.querySelector(".contacts-link");
 const moreArtworks = document.querySelector(".more-artworks");
 const moreContent = document.querySelectorAll(".more-content");
 
+// Lightbox for opening modal of single pictures
+const artworkImages = document.querySelectorAll(".artwork-img");
+const lightbox = document.createElement("div");
+
+lightbox.id = "lightbox";
+
+artworkImages.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    lightbox.classList.add("active");
+    // const img = document.createElement("img");
+
+    lightbox.insertAdjacentHTML(
+      "beforeend",
+
+      `
+      <svg width="24" height="24"  viewBox="0 0 24 24">
+          <path
+            stroke="rgb(212, 212, 212)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M17.25 6.75L6.75 17.25"
+          ></path>
+          <path
+            stroke="rgb(212, 212, 212)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M6.75 6.75L17.25 17.25"
+          ></path>
+        </svg>
+      <img src=${image.src} alt="#" />
+      
+      `
+    );
+
+    // img.src = image.src;
+
+    // while (lightbox.firstChild) {
+    //   lightbox.removeChild(lightbox.firstChild);
+    // }
+    // lightbox.appendChild(img);
+  });
+});
+
+// create closing x button
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== e.currentTarget) return;
+
+  lightbox.classList.remove("active");
+  document.querySelector("#lightbox img").remove();
+  document.querySelector("#lightbox svg").remove();
+});
+
+document.body.appendChild(lightbox);
+
+// end of Ligthbox
+
 const heroOptions = {
   rootMargin: "0px 0px 0px 0px",
 };
