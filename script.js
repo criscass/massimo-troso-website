@@ -80,12 +80,25 @@ const toggleMenu = function () {
   burgerMenu.classList.toggle("active");
 };
 
+function toogleMoreArtwork() {
+  moreContent.forEach((entry) => {
+    entry.style.display = "block";
+  });
+
+  moreArtworks.style.display = "none";
+}
+
+moreArtworks.addEventListener("click", () => {
+  toogleMoreArtwork();
+});
+
 burgerMenu.addEventListener("click", () => {
   // toggle nav
   toggleMenu();
 });
 
 artworks.addEventListener("click", () => {
+  toogleMoreArtwork();
   toggleMenu();
 });
 about.addEventListener("click", () => {
@@ -93,14 +106,6 @@ about.addEventListener("click", () => {
 });
 contacts.addEventListener("click", () => {
   toggleMenu();
-});
-
-moreArtworks.addEventListener("click", () => {
-  moreContent.forEach((entry) => {
-    entry.style.display = "block";
-  });
-
-  moreArtworks.style.display = "none";
 });
 
 const heroObserver = new IntersectionObserver(function (entries, heroObserver) {
