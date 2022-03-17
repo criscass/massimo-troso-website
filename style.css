@@ -66,6 +66,7 @@ ul {
 
 .head-wrapper {
   --nav-text-color: #24292e;
+  --nav-text-color-hover: #000000;
   --nav-bg-color: transparent;
   --margin: 1.2rem;
   --burger-color: #24292e;
@@ -112,12 +113,20 @@ header nav {
 }
 
 header a {
+  display: inline-block;
   text-decoration: none;
   font-family: "cinzel", serif;
   font-size: 1.44rem;
   font-weight: 400;
   color: var(--nav-text-color);
-  transition: color ease-in-out 500ms;
+  transition: color ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+}
+
+header a:hover {
+  color: var(--nav-text-color-hover);
+  color: red;
+  transform: scale(1.05);
 }
 
 .title {
@@ -126,7 +135,7 @@ header a {
   font-size: 1rem;
   margin: var(--margin) 2rem;
   color: var(--nav-text-color);
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 300ms;
 }
 
 .burger-menu {
@@ -401,6 +410,9 @@ header a {
   .socials {
     margin-bottom: 2rem;
   }
+  .more-artworks h3 {
+    font-size: 1.45rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -429,7 +441,7 @@ header a {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   display: none;
 }
 
@@ -449,10 +461,10 @@ header a {
 
 #lightbox svg {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   z-index: 2000;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   pointer-events: none;
 }
